@@ -1,101 +1,156 @@
-import Image from "next/image";
+import Image from 'next/image'
+import Link from 'next/link'
+import { ImageCarousel } from '@/components/image-carousel'
+import { Navigation } from '@/components/navigation'
+import { Play } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <div className="min-h-screen">
+        <Navigation />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        {/* Hero Section */}
+        <section className="relative h-[600px]">
+          {/*<Image*/}
+          {/*    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Foundation%205K%20Homepage-4MmxT6zTPkIWQvJ94yZsIh1EH2PozL.png"*/}
+          {/*    alt="Runners on a street during race"*/}
+          {/*    fill*/}
+          {/*    className="object-cover brightness-50"*/}
+          {/*    priority*/}
+          {/*/>*/}
+          <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <p className="text-white text-lg mb-2">FOUNDATION 5K</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+              Step by Step, Let&#39;s Make A Difference
+            </h1>
+            <p className="text-white mb-6">
+              Sign up today to race a 5K with Foundation Christian Academy
+            </p>
+            <div className="flex gap-4">
+              <button>
+                Sign Up Today
+              </button>
+              <button
+                  className="bg-transparent text-white hover:bg-white/10"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                Watch Video
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Who Are We Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-[#8B0000] mb-6">Who Are We</h2>
+              <p className="text-gray-700 mb-6">
+                We are a Christ-centered educational institution dedicated to nurturing the academic and spiritual growth of students from Kindergarten through 6th grade. Our mission is to provide a supportive and inspiring environment where young minds can flourish, rooted in Christian values and biblical truth. At Foundation Christian Academy, we believe in the vital importance of parent involvement and partnership, working together to equip students with the knowledge, character, and skills needed to impact their communities and the world for Christ.
+              </p>
+              <button>Sign Up Today</button>
+            </div>
+            <div className="relative h-[400px]">
+              <ImageCarousel />
+            </div>
+          </div>
+        </section>
+
+        {/* What You Need to Know Section */}
+        <section className="bg-[#8B0000] text-white py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8">What You Need to Know</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <p className="mb-4">
+                  Join us on for the FOUNDATION 5K, starting at 10:30 AM at the McLean County Pony League Baseball Fields, 3707 Ireland Grove Road in Bloomington and finishing at Victory Church, 18180 US Highway 150, Bloomington. Pack-in begins at 9:30 AM, and all participants will receive a free T-shirt with their $30 registration fee. Proceeds from the race will benefit Foundation Christian Academy, a brand new Christian school in Bloomington-Normal.
+                </p>
+              </div>
+              <div>
+                <p>
+                  Learn more about the school at FoundationCA.org. We look forward to seeing you there!
+                </p>
+                <div className="mt-4">
+                  <p><strong>Starting Location:</strong> McLean County Pony League Baseball Fields, 3707 Ireland Grove Road, Bloomington, IL 61704</p>
+                  <p><strong>Ending Location:</strong> Victory Church, 18180 US Highway 150, Bloomington, IL 61705</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Merchandise Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[400px]">
+              <Image
+                  src="/placeholder.svg"
+                  alt="5K Foundation T-shirt"
+                  fill
+                  className="object-contain"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-[#8B0000] mb-6">Grab Some Merch</h2>
+              <p className="text-gray-700 mb-6">
+                Rep your favorite school while out there running. Show off how great you look!
+              </p>
+              <button>Purchase Today</button>
+            </div>
+          </div>
+        </section>
+
+        {/* Race Information Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100">
+          <h2 className="text-3xl font-bold text-center text-[#8B0000] mb-12">Race Information</h2>
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3064.453261580542!2d-88.9544!3d40.4784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40.4784,-88.9544!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-bold mb-4">Place</h3>
+                <p>Victory Church</p>
+                <p>18180 US Highway 150</p>
+                <p>Bloomington, IL 61705</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Price</h3>
+                <p>$30 Race Fee + $2.89 Sign up fee</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Start Time</h3>
+                <p>10:30 AM CDT</p>
+                <p>March 29, 2023 @ 10:30 AM CDT</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-4">Registration</h3>
+                <p>Registration ends -</p>
+                <button className="mt-4">Sign Up Today</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-black text-white py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p>race@foundationca.org</p>
+            <div className="flex gap-8 mt-4 md:mt-0">
+              <Link href="#" className="hover:text-gray-300">FCA Website</Link>
+              <Link href="#" className="hover:text-gray-300">Contact Us</Link>
+            </div>
+          </div>
+        </footer>
+      </div>
+  )
 }
+
