@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ImageCarousel } from '@/components/image-carousel'
 import { Navigation } from '@/components/navigation'
-import { Play } from 'lucide-react'
 
 import Hero from '../../public/assets/hero section.jpg'
 import TShirt from '../../public/assets/tshirt.png'
