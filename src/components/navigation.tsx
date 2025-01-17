@@ -3,24 +3,26 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Logo from '../../public/assets/logo.png'
 
 import { Menu, X } from 'lucide-react'
+import Button from "@/components/ui/Button";
 
 export function Navigation() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <nav className="bg-black/90 fixed w-full z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="absolute w-full z-50">
+            <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link href="/" className="flex-shrink-0">
                             <Image
-                                src="/placeholder.svg"
+                                src={Logo.src}
                                 alt="Foundation Logo"
-                                width={40}
-                                height={40}
-                                className="h-8 w-auto"
+                                width={250}
+                                height={250}
+                                className="h-16 w-auto"
                             />
                         </Link>
                     </div>
@@ -30,18 +32,18 @@ export function Navigation() {
                         <Link href="/" className="text-white hover:text-gray-300">
                             Home
                         </Link>
-                        <Link href="#" className="text-white hover:text-gray-300">
+                        <Link href="/#race-info" className="text-white hover:text-gray-300">
                             Race Info
                         </Link>
-                        <Link href="#" className="text-white hover:text-gray-300">
-                            Race Results
+                        <Link href="https://www.ItsRaceTime.com/Results.aspx?ID=3208" className="text-white hover:text-gray-300">
+                           2024 Race Results
                         </Link>
-                        <Link href="#" className="text-white hover:text-gray-300">
+                        <Link href="https://foundationca.org/our-school/" className="text-white hover:text-gray-300">
                             About FCA
                         </Link>
-                        <button>
+                        <Button>
                             Sign Up Today
-                        </button>
+                        </Button>
                     </div>
 
                     {/* Mobile menu button */}
@@ -63,8 +65,8 @@ export function Navigation() {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <div className="md:hidden backdrop-blur-md">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3" onClick={() => setIsOpen(false)}>
                         <Link
                             href="/"
                             className="text-white block px-3 py-2 hover:bg-gray-700 rounded-md"
@@ -72,27 +74,27 @@ export function Navigation() {
                             Home
                         </Link>
                         <Link
-                            href="#"
+                            href="/#race-info"
                             className="text-white block px-3 py-2 hover:bg-gray-700 rounded-md"
                         >
                             Race Info
                         </Link>
                         <Link
-                            href="#"
+                            href="https://www.ItsRaceTime.com/Results.aspx?ID=3208"
                             className="text-white block px-3 py-2 hover:bg-gray-700 rounded-md"
                         >
-                            Race Results
+                            2024 Race Results
                         </Link>
                         <Link
-                            href="#"
+                            href="https://foundationca.org/our-school/"
                             className="text-white block px-3 py-2 hover:bg-gray-700 rounded-md"
                         >
                             About FCA
                         </Link>
                         <div className="px-3 py-2">
-                            <button className="w-full">
+                            <Button>
                                 Sign Up Today
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 </div>

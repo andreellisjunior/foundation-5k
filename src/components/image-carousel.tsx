@@ -3,14 +3,19 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
+import image1 from '../../public/assets/4th Graders Studying Science.jpg'
+import image2 from '../../public/assets/3rd-7th Grade Chapel Time.jpg'
+import image3 from '../../public/assets/Chantel Waving Hello.jpg'
+import image4 from '../../public/assets/Kindergarten Learning to Read.jpg'
+
 export function ImageCarousel() {
     const [currentSlide, setCurrentSlide] = useState(0)
 
     const slides = [
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
-        '/placeholder.svg?height=400&width=600',
+        image1.src,
+        image2.src,
+        image3.src,
+        image4
     ]
 
     useEffect(() => {
