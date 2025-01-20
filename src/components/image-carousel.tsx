@@ -41,7 +41,7 @@ export function ImageCarousel() {
                         src={slide}
                         alt={`Slide ${index + 1}`}
                         fill
-                        className="object-cover rounded-lg"
+                        className="object-cover rounded-lg xl:object-contain"
                     />
                 </div>
             ))}

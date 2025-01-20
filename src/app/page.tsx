@@ -47,7 +47,7 @@ export default function Home() {
               </p>
               <Button>Sign Up Today</Button>
             </div>
-            <div className="relative md:-left-24 bottom-12 h-[500px] md:col-span-2 md:right-12">
+            <div className="relative md:-left-24 bottom-12 h-[500px] md:col-span-2 md:right-12 2xl:-left-32">
               <ImageCarousel />
             </div>
           </div>
